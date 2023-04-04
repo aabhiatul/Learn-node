@@ -27,12 +27,21 @@ console.log("hello wordwesfsld!")
 // }).listen(8080)
 
 // ----taking input from terminal----
+// const fs = require('fs')
+// const input = process.argv
+// if(input[2] == 'add'){
+//     fs.writeFileSync(input[3],input[4])
+// }else if(input[2]=='remove'){
+//     fs.unlinkSync(input[3])
+// }else{
+//     console.log('invalid input')
+// }
+
+// ----Display List of files ----
+
 const fs = require('fs')
-const input = process.argv
-if(input[2] == 'add'){
-    fs.writeFileSync(input[3],input[4])
-}else if(input[2]=='remove'){
-    fs.unlinkSync(input[3])
-}else{
-    console.log('invalid input')
+const path = require('path')
+const dirPath = path.join(__dirname,'files')
+for(i=0;i<5;i++){
+    fs.writeFileSync(`${dirPath}/hello${i}.txt`,'simple file')
 }
