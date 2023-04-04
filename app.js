@@ -9,8 +9,30 @@ console.log("hello wordwesfsld!")
 
 // .....create server.......
 
-const http = require('http')
-http.createServer((req,res) => {
-    res.write("<h1>First server!</h2>")
-    res.end();
-}).listen(8000)
+// const http = require('http')
+// http.createServer((req,res) => {
+//     res.write("<h1>First server!</h2>")
+//     res.end();
+// }).listen(8000)
+
+// -------Create Api-----
+
+// const http = require('http')
+
+// http.createServer((req,res)=>{
+//     res.writeHead(200,{'content-type':'application\json'})
+//     res.write(JSON.stringify({name:'abinash',email:'abc@gmail.com',mob:'9090932810'}))
+//     res.end()
+
+// }).listen(8080)
+
+// ----taking input from terminal----
+const fs = require('fs')
+const input = process.argv
+if(input[2] == 'add'){
+    fs.writeFileSync(input[3],input[4])
+}else if(input[2]=='remove'){
+    fs.unlinkSync(input[3])
+}else{
+    console.log('invalid input')
+}
