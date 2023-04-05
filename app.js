@@ -53,10 +53,10 @@ console.log("hello wordwesfsld!")
 
 // ----crud operation with file system ----
 
-const fs = require('fs')
-const path = require('path')
-const dirPath = path.join(__dirname,'crud')
-const filepath = `${dirPath}/apple.text`
+// const fs = require('fs')
+// const path = require('path')
+// const dirPath = path.join(__dirname,'crud')
+// const filepath = `${dirPath}/apple.text`
 
 // fs.writeFileSync(filepath,"this is a file.") - write
 // fs.readFile(filepath,'utf-8',(err,item)=>{
@@ -72,3 +72,20 @@ const filepath = `${dirPath}/apple.text`
 // }) - rename
 
 // fs.unlinkSync(`${dirPath}/fruit.txt`) - delete
+
+// ----Asynchronous programming-----
+let a = 20
+let b = 0
+
+// setTimeout(() => {
+//     b=30
+// }, 2000);
+let waitingdata = new Promise((resolve,reject)=>{
+    setTimeout(() => {
+        resolve(20)
+    }, 2000);
+})
+
+waitingdata.then((data)=>{
+    console.log(a+b+data)
+})
